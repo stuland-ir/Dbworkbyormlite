@@ -1,0 +1,97 @@
+#
+# generated on 2015/06/19 07:54:47
+#
+# --table-start--
+dataClass=ir.stuland.dbworkbyormlite.dbModels.person
+tableName=persons
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+indexName=persons_id_idx
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=family
+# --field-end--
+# --field-start--
+fieldName=address
+# --field-end--
+# --field-start--
+fieldName=phone
+# --field-end--
+# --field-start--
+fieldName=email
+indexName=persons_email_idx
+# --field-end--
+# --field-start--
+fieldName=posts
+foreignCollection=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=ir.stuland.dbworkbyormlite.dbModels.role
+tableName=roles
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+indexName=roles_id_idx
+# --field-end--
+# --field-start--
+fieldName=Title
+unique=true
+# --field-end--
+# --field-start--
+fieldName=Description
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=ir.stuland.dbworkbyormlite.dbModels.personRoles
+tableName=personRoles
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+indexName=personRoles_id_idx
+# --field-end--
+# --field-start--
+fieldName=person
+columnName=person_id
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=role
+columnName=role_id
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=ir.stuland.dbworkbyormlite.dbModels.post
+tableName=posts
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+indexName=posts_id_idx
+# --field-end--
+# --field-start--
+fieldName=Content
+# --field-end--
+# --field-start--
+fieldName=Author
+columnName=author_person_id
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
